@@ -1,0 +1,56 @@
+Fake-News-Detector-WebApp/
+├─ backend/
+│  ├─ train_model.py
+│  ├─ main.py
+│  ├─ requirements.txt
+│  ├─ Dockerfile
+│  └─ model.pkl          # created after running train_model.py
+├─ frontend/
+│  ├─ index.html
+│  ├─ package.json
+│  ├─ postcss.config.cjs
+│  ├─ tailwind.config.cjs
+│  └─ src/
+│     ├─ main.jsx
+│     └─ App.jsx
+└─ docker-compose.yml
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import "./index.css";
+
+createRoot(document.getElementById("root")).render(<App />);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fake News Detection & Mitigation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+{
+  "name": "fake-news-mitigation",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  }
+}
